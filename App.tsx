@@ -1,12 +1,48 @@
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { NavigationContainer } from '@react-navigation/native';
+import { useState } from 'react';
+import TabNavigator from './navigation/TabNavigator';
+import AppNavigator from './navigation/TabNavigator';
+import * as SplashScreen from 'expo-splash-screen';
+import { store, persistor } from './src/redux/store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
+
+const queryClient = new QueryClient();
 
 export default function App() {
+
+  useEffect(() => {
+    async function prepare() {
+      try {
+        // Empêche le Splash Screen de disparaître immédiatement
+        await SplashScreen.preventAutoHideAsync();
+        // Simule une tâche de chargement 
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        // Cache le Splash Screen
+        await SplashScreen.hideAsync();
+      }
+    }
+    prepare();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <QueryClientProvider client={queryClient}>
+          <TabNavigator/>
+        </QueryClientProvider>
+      </PersistGate>
+    </Provider>
+
   );
 }
 
