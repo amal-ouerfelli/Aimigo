@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import 'react-native-gesture-handler';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { NavigationContainer } from '@react-navigation/native';
-import { useState } from 'react';
 import TabNavigator from './navigation/TabNavigator';
-import AppNavigator from './navigation/TabNavigator';
 import * as SplashScreen from 'expo-splash-screen';
 import { store, persistor } from './src/redux/store';
 import { Provider } from 'react-redux';

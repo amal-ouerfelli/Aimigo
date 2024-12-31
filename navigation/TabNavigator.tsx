@@ -2,10 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import FavoritesScreen from '../src/screens/Favorites/FavoritesScreen';
+import FavoritesScreen from '../src/screens/FavoritesScreen';
 import { createStackNavigator } from '@react-navigation/stack';
-import FruitDetailsScreen from '../src/screens/Details/FruitDetailsScreen';
-import FruitsListScreen from '../src/screens/List/FruitsListScreen';
+import FruitDetailsScreen from '../src/screens/FruitDetailsScreen';
+import FruitsListScreen from '../src/screens/FruitsListScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -51,13 +51,9 @@ const FruitsNavigator = ({ favorites, addToFavorites, removeFromFavorites, isFav
           )}
         </Stack.Screen>
         <Stack.Screen name="FruitDetails" options={{headerShown:false}}>
-          {({ route, navigation }) => (
+          {({ route}) => (
             <FruitDetailsScreen
               route={route}
-              navigation={navigation}
-              addToFavorites={addToFavorites}
-              removeFromFavorites={removeFromFavorites}
-              isFavorite={isFavorite}
             />
           )}
         </Stack.Screen>

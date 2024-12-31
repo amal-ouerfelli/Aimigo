@@ -12,9 +12,3 @@ export interface Fruit {
       sugar: number;
     };
   }
-
-export type PaginatedData = {
-  fruits: Fruit[];
-  hasNextPage: boolean;
-  nextPage: number;
-};

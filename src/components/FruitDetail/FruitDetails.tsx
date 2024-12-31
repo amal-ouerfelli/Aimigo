@@ -14,9 +14,9 @@ type FruitDetailsProps = {
   fruit: Fruit;
 };
 
-const FruitDetails: React.FC<FruitDetailsProps> =({ fruit }) => {
-  const dispatch = useDispatch();  
-  const favorites =  useSelector((state: RootState) => state.favorites)    
+const FruitDetails: React.FC<FruitDetailsProps> = ({ fruit }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state: RootState) => state.favorites)
   const isFavorite = favorites?.includes(fruit.name);
 
   const translateY = useSharedValue(-50);

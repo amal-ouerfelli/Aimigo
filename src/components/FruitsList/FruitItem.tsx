@@ -25,7 +25,6 @@ const FruitItem: React.FC<FruitItemProps> = ({ item, onPress }) => {
         />
         <Text style={styles.name}>{item.name}</Text>
       </View>
-
     </TouchableOpacity>
   );
 };

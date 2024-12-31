@@ -7,7 +7,7 @@ import favoritesSlice from './favoritesSlice';
 // Configuration de Redux Persist
 const persistConfig = {
   key: 'root', // Clé pour le stockage
-  storage: AsyncStorage, // Utiliser AsyncStorage pour sauvegarder
+  storage: AsyncStorage, // Utilisation de AsyncStorage pour sauvegarder
 };
 
 
@@ -19,7 +19,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // Désactiver les vérifications pour Redux Persist
+      serializableCheck: false, // Pour désactiver les vérifications pour Redux Persist
     }),
 });
 
