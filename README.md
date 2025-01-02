@@ -75,8 +75,8 @@ Cette application utilise Jest et Testing Library pour les tests. Pour exécuter
 Les tests couvrent la fonctionnalité de recherche d'un fruit avec son nom.
 
 ## Démo
-
-
+Lien pour la démonstration: 
+https://we.tl/t-q1Rcy4mwaI
 
 ## Améliorations
 1. Amélioration du design des composants.
