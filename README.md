@@ -41,7 +41,6 @@ Cette application React Native affiche une liste de fruits avec des fonctionnali
 
    ```bash
    git clone https://github.com/amal-ouerfelli/Aimigo.git
-   cd aimigo-test
    ```
 
 2. Installez les dépendances :
